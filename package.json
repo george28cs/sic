@@ -1,12 +1,15 @@
 {
   "name": "sis_c_app",
+  "homepage":"https://george28cs.github.io/sic",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite --host",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "tsc && vite build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "bulma": "^0.6.2",
@@ -22,6 +25,7 @@
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "@vitejs/plugin-react": "^3.1.0",
+    "gh-pages": "^5.0.0",
     "sass": "^1.58.3",
     "typescript": "^4.9.3",
     "vite": "^4.1.0"
