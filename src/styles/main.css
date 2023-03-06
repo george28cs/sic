@@ -1,0 +1,108 @@
+.main {
+    position: relative;
+    height: 100%;
+}
+
+.main-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background: rgba(38, 56, 149, 0.988);
+    background: linear-gradient(45deg, rgba(38, 56, 149, 0.669) 0%, rgba(126,111,114,1) 100%);    
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section {
+    height: 94%;
+    width: 93%;
+    backdrop-filter: blur(1px);
+    background-color: rgba(16, 16, 16, 0.7);
+    padding: 1rem;
+    position: relative;
+    z-index: 2;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    text-align: justify;
+}
+
+section>h1 {
+    font-size: 2.7rem;
+  font-weight: 600;
+  text-align: center;
+  color: #bdb6b6;
+  margin-bottom: 2.5rem;
+  line-height: 3.5rem;
+}
+
+article>ul>li>p {
+    font-size: 1.3rem;
+    color: #ece7e7;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+li {
+    margin-bottom: 1.5rem;
+}
+
+.is-blue {
+    color: rgb(49, 99, 180);
+}
+
+.icon-styled {
+    display: inline-block;
+    line-height: 1;
+    text-align: center;
+    font-size: 4.5rem;
+    margin-right: 1rem;
+}
+
+.icon-styled > i {
+    background: linear-gradient(to top, #a53c1b 0%, #bb7627 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.icon-styled > svg {
+    margin: 0;
+    color: #b44422;
+    stroke-width: 0.9;
+    text-align: center;
+}
+.contact-us-button {
+    color: white;
+    border-radius: 0;
+    border-width: .17rem;
+    padding: 10px 30px;
+    border-image-slice: 1;
+    background-image: none;
+    background: transparent;
+    box-shadow: 5px 5px 0px 0px rgb(164, 76, 65);
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+}
+
+.contact-us-button:hover {
+    background: linear-gradient(to bottom, #ae4a2b 0%, #cf6f52 100%);
+}

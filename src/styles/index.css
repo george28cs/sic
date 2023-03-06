@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+#root {
+  /* variables */
+  --mobile: 768px;
+  --tablet: 769px;
+  --desktop: 1024px;
+  --widescreen: 1216px;
+  --fullhd: 1408px;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: gray;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+@media screen and (max-width: --mobile) {
+  
+}
+
+@media screen and (min-width: --tablet) {
+}
+
+@media screen and (min-width: --desktop) {
+}
+
+@media screen and (min-width: --widescreen) {
+}
+
+@media screen and (min-width: --fullhd) {
+}

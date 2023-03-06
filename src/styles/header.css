@@ -1,0 +1,97 @@
+.navbar {
+    background-color: #2d394b;
+}
+.navbar-brand> a.navbar-item:hover {
+    background: none;
+}
+.navbar-item-button {
+    color: #d9dce0;
+    width: 100%;
+}
+.navbar-burger {
+    position: absolute;
+    right: 1rem;
+    background: none;
+    border: none;
+    height: 45px;
+    width: 45px;
+}
+
+.navbar-item > img {
+    width: 120px;
+    height: auto;
+    max-height: 140px;
+    background-color: rgba(241, 238, 234, 0.738);
+    border-radius: 0.4rem;
+    padding: 0.1rem;
+}
+
+.navbar-brand {
+    align-items: center;
+}
+
+.navbar-menu.is-active {
+    position: relative;
+    z-index: 2;
+    height: auto;
+    width: 100%;
+    display: flex;
+    font-size: 1.8rem;
+    font-weight: 700;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    align-items: center;
+
+}
+
+button.navbar-burger.burger > span {
+    height: 2px;
+    width: 25px;
+    color: rgb(169, 164, 165);
+}
+
+.navbar-menu {
+    background-color: #d64343;
+}
+
+a.navbar-item > span.icon {
+    margin-right: 1rem;
+}
+
+.navbar-end {
+    width: 100%;
+}
+
+.navbar-item > img:hover {
+    width: 12.5rem;
+    height: auto;
+    max-height: 140px;
+    background-color: rgba(253, 252, 251, 0.738);
+    border-radius: 0.4rem;
+    padding: 0.1rem;
+    transition: all 0.5s ease;
+}
+
+@media screen and (min-width: 1024px) {
+    .navbar-end {
+        width: revert;
+    
+    }
+    .navbar-menu {
+        background-color: revert;
+    }
+
+    .navbar-item-button{
+        display: flex;
+        justify-content: center;
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: rgb(202, 195, 195);
+    }
+    a.navbar-item-button:hover{
+        background-color: #9a1a1a;
+        color: rgb(15, 89, 193);
+        font-size: 1.9rem;
+        transition: all 0.5s ease;
+    }
+}

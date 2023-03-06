@@ -1,0 +1,7 @@
+#app {
+  height: 100vh;
+  display: grid;
+  grid-auto-rows: 50px auto 6.5rem;
+  background-color: #2d394b;
+  z-index: -1;
+}
