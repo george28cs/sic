@@ -1,6 +1,6 @@
 {
   "name": "sis_c_app",
-  "homepage":"https://george28cs.github.io/sic",
+  "homepage": "https://george28cs.github.io/sic",
   "private": true,
   "version": "0.0.1",
   "type": "module",
@@ -12,8 +12,9 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "bulma": "^0.6.2",
+    "bulma": "^0.9.2",
     "react": "^18.2.0",
+    "react-bulma-components": "^4.1.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
     "react-router-dom": "^6.8.2",

@@ -10,10 +10,7 @@
     position: absolute;
     top: 0;
     left: 0;
-
-    background: rgba(38, 56, 149, 0.988);
-    background: linear-gradient(45deg, rgba(38, 56, 149, 0.669) 0%, rgba(126,111,114,1) 100%);    
-    z-index: 1;
+    z-index: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -40,8 +37,9 @@ section>h1 {
   font-weight: 600;
   text-align: center;
   color: #bdb6b6;
-  margin-bottom: 2.5rem;
   line-height: 3.5rem;
+  font-family: 'Poppins', sans-serif;
+
 }
 
 article>ul>li>p {
@@ -101,8 +99,10 @@ li {
     cursor: pointer;
     font-family: 'Poppins', sans-serif;
     font-weight: bolder;
+    border-color: cornflowerblue;
+    transition: all 0.5s ease;
 }
 
 .contact-us-button:hover {
-    background: linear-gradient(to bottom, #ae4a2b 0%, #cf6f52 100%);
+    background: #7a4a3a72;
 }

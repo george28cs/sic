@@ -1,5 +1,6 @@
 .navbar {
-    background-color: #2d394b;
+    background-color: rgba(15, 16, 16, 0);
+    z-index: 1;
 }
 .navbar-brand> a.navbar-item:hover {
     background: none;
@@ -7,6 +8,8 @@
 .navbar-item-button {
     color: #d9dce0;
     width: 100%;
+    display: flex;
+    align-items: center;
 }
 .navbar-burger {
     position: absolute;
@@ -21,7 +24,7 @@
     width: 120px;
     height: auto;
     max-height: 140px;
-    background-color: rgba(241, 238, 234, 0.738);
+    background-color: rgba(222, 217, 234, 0.896);
     border-radius: 0.4rem;
     padding: 0.1rem;
 }
@@ -55,27 +58,34 @@ button.navbar-burger.burger > span {
 }
 
 a.navbar-item > span.icon {
-    margin-right: 1rem;
+    margin-right: 1rem !important;
 }
 
 .navbar-end {
     width: 100%;
 }
 
+.icon {
+    height: 2rem;
+    width: 2rem;
+    
+}
+
+.icon > svg {
+    font-size: 2rem;
+}
 .navbar-item > img:hover {
-    width: 12.5rem;
     height: auto;
     max-height: 140px;
-    background-color: rgba(253, 252, 251, 0.738);
+    background-color: rgba(182, 195, 207, 0.738);
     border-radius: 0.4rem;
-    padding: 0.1rem;
     transition: all 0.5s ease;
 }
 
 @media screen and (min-width: 1024px) {
     .navbar-end {
         width: revert;
-    
+        margin-right: 5rem;
     }
     .navbar-menu {
         background-color: revert;
@@ -83,15 +93,21 @@ a.navbar-item > span.icon {
 
     .navbar-item-button{
         display: flex;
+        width: auto;
         justify-content: center;
-        font-size: 1.3rem;
+        font-size: 1.5rem;
         font-weight: 700;
-        color: rgb(202, 195, 195);
+        color: rgb(180, 172, 172);
+        margin-left: 1rem;
+
     }
     a.navbar-item-button:hover{
-        background-color: #9a1a1a;
-        color: rgb(15, 89, 193);
-        font-size: 1.9rem;
+        background-color: revert;
+        color: rgb(193, 95, 15);
         transition: all 0.5s ease;
+    }
+
+    a.navbar-item > span.icon {
+        margin-right: 0.5rem !important;
     }
 }

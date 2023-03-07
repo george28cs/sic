@@ -1,4 +1,3 @@
-import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -10,14 +9,18 @@ const SliderComponent = () => {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 1000,
+    speed: 8000,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 5000,
   };
 
   return (
+    <>
+    <div className='slider-cover'>
+    </div>
+
     <Slider {...settings}  className="slider-wrapper">
       <div>
         <img className='slider-img' src={img1} alt="Slide 1" />
@@ -26,6 +29,7 @@ const SliderComponent = () => {
         <img className='slider-img' src={img2} alt="Slide 2" />
       </div>
     </Slider>
+    </>
   );
 };
 

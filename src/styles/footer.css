@@ -1,13 +1,14 @@
 .footer {
     margin: 0;
     padding: 0;
-    background-color: #2d394b;
+    background-color: #2d394b00;
     display: flex;
     color: rgb(200, 178, 178);
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: 1.1rem;
+    z-index: 1;
 }
 
 .contact-info {
