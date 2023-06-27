@@ -12,12 +12,10 @@ function App() {
   const initialState = useActiveSection()
   return (
     <AppContext.Provider value={initialState}>
-
     <>
-      <SliderComponent />
       <Header />
       <Main />
-      <Footer />
+      {/* <Footer /> */}
     </>
     </AppContext.Provider>
   );

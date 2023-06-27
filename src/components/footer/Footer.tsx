@@ -1,5 +1,5 @@
 import '../../styles/footer.css';
-import { FaMapMarkerAlt, FaEnvelope } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaPhone, FaCopyright } from 'react-icons/fa';
 
 
 export default function Footer() {
@@ -13,12 +13,15 @@ export default function Footer() {
             </div>
             <div className="contact-info">
                 <div className="icon">
-                    <FaEnvelope />
+                    <FaPhone />
                 </div>
-                <p>correo@electronico.com</p>
+                <p>9212146024</p>
             </div>
             <div className="contact-info">
-                <p>© COPYRIGHT 2023</p>
+                <div className='icon'>
+                    <FaCopyright/>
+                </div>
+                <p>Copyright 2023</p>
             </div>
         </div>
     );

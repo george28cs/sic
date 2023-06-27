@@ -1,0 +1,54 @@
+#contact {
+    width: 85vw;
+    background-color: rgba(20, 21, 33, 0.89);
+}
+.captcha-container div { 
+    height: 100%;
+    width: auto;
+    background-color: rgb(109, 80, 80);
+}
+
+article.section-contact {
+    width: 70%;
+}
+.section-contact .control {
+    padding: 0.4rem 0;
+}
+
+.section-contact .field label {
+    font-size: 1.3rem;
+}
+
+#rc-anchor-container {
+    height: 10px;
+}
+#map {
+    height: 200px;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.help.is-danger {
+    font-size: 1.2rem;
+    color: rgb(237, 134, 9);
+}
+
+.section-contact .button.is-link{
+    background-color: rgb(153, 70, 51);
+    border-radius: 0;
+    font-size: 1.2rem;
+    width: 120px;
+    height: 50px;
+}
+
+.section-contact .button.is-link:hover{
+    background-color: rgb(156, 108, 97);
+    border-radius: 0;
+    font-size: 1.2rem;
+}
+.contact-us-message-wrapper {
+    padding-bottom: 3rem;
+}
+.contact-us-message {
+    font-size: 1.7rem;
+}

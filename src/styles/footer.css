@@ -1,21 +1,24 @@
 .footer {
-    margin: 0;
-    padding: 0;
     background-color: #2d394b00;
     display: flex;
-    color: rgb(200, 178, 178);
+    color: rgb(6, 5, 5);
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: 1.1rem;
-    z-index: 1;
+    padding: 15px 0;
 }
 
 .contact-info {
     display: flex;
     align-items: center;
+    padding: 0.15rem 0;
+
 }
 
 .contact-info > .icon {
     margin-right: 0.7rem;
+}
+.icon > svg{
+    font-size: 1.5rem;
 }

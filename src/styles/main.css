@@ -1,13 +1,13 @@
 .main {
     position: relative;
     height: 100%;
+    background-color: rgb(252, 252, 252);
 }
 
 .main-content {
-    position: absolute;
+    position: relative;
     width: 100%;
     height: 100%;
-    position: absolute;
     top: 0;
     left: 0;
     z-index: 0;
@@ -17,11 +17,6 @@
 }
 
 .section {
-    height: 94%;
-    width: 93%;
-    backdrop-filter: blur(1px);
-    background-color: rgba(16, 16, 16, 0.7);
-    padding: 1rem;
     position: relative;
     z-index: 2;
     color: white;
@@ -30,16 +25,22 @@
     align-items: center;
     flex-direction: column;
     text-align: justify;
+    padding: 0;
+    margin: 0;
 }
 
 section>h1 {
-    font-size: 2.7rem;
-  font-weight: 600;
-  text-align: center;
-  color: #bdb6b6;
-  line-height: 3.5rem;
-  font-family: 'Poppins', sans-serif;
-
+    padding-top: 30px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 2.8rem;
+    font-weight: 700;
+    text-align: center;
+    color: #da0e0e;
+    line-height: 3.5rem;
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 1px 1px 2px rgb(35, 8, 8), 0 0 3rem rgb(255, 255, 255), 0 .3rem .2em rgb(255, 255, 255);
 }
 
 article>ul>li>p {
@@ -63,46 +64,41 @@ li {
 }
 
 .is-blue {
-    color: rgb(49, 99, 180);
+    color: rgb(7, 20, 93);
 }
 
 .icon-styled {
-    display: inline-block;
-    line-height: 1;
-    text-align: center;
-    font-size: 4.5rem;
-    margin-right: 1rem;
+    font-size: 6rem;
+    font-weight: bold;
 }
 
-.icon-styled > i {
-    background: linear-gradient(to top, #a53c1b 0%, #bb7627 100%);
+.icon-styled>i {
+    background: linear-gradient(to top, #a09b99 0%, #999795 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.icon-styled > svg {
+.icon-styled>svg {
     margin: 0;
-    color: #b44422;
-    stroke-width: 0.9;
+    color: #151313;
+    stroke-width: 1;
     text-align: center;
 }
+
 .contact-us-button {
-    color: white;
-    border-radius: 0;
+    margin-top: 1.5rem;
+    border-radius: 3px;
     border-width: .17rem;
-    padding: 10px 30px;
-    border-image-slice: 1;
+    padding: 8px 20px;
     background-image: none;
-    background: transparent;
-    box-shadow: 5px 5px 0px 0px rgb(164, 76, 65);
     cursor: pointer;
     font-family: 'Poppins', sans-serif;
     font-weight: bolder;
-    border-color: cornflowerblue;
+    font-size: 1.4rem;
     transition: all 0.5s ease;
 }
 
 .contact-us-button:hover {
-    background: #7a4a3a72;
+    background: #decfca72;
 }

@@ -2,4 +2,7 @@
   height: 100vh;
   display: grid;
   grid-auto-rows: 50px auto 6.5rem;
+  position: relative;
+  z-index: -1;
+  
 }

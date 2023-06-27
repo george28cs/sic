@@ -5,23 +5,20 @@ import useOutsideAlerter from '../../utils/useOutsideAlerter';
 import { AiOutlineHome, AiOutlineInfoCircle, AiOutlineMail } from 'react-icons/ai';
 import { MdEngineering } from 'react-icons/md';
 import { BsTools } from 'react-icons/bs';
-import useActiveSection from '../../utils/customHooks/useActiveSection';
 import { SectionEnum } from '../../utils/enum/sectionEnum';
 import AppContext from '../../context/AppContext';
-
-
+import useScrollDirection from '../../utils/customHooks/useScrollDirection';
 
 const Header = () => {
     const [isBurgerActive, setIsBurgerActive] = useState(false);
-    const [activeSection, setActiveSection] = useContext(AppContext)
-    
+    const [activeSection, setActiveSection] = useContext(AppContext);
+    const scrollDirection = useScrollDirection();
+
     const handleBurgerClick = () => {
         setIsBurgerActive(!isBurgerActive);
     };
     const handleSectionClick = (sectionName: SectionEnum) => {
-        console.log(activeSection)
         setActiveSection(sectionName);
-        
         setIsBurgerActive(false);
     };
 
@@ -29,9 +26,11 @@ const Header = () => {
     useOutsideAlerter(wrapperRef, isBurgerActive, setIsBurgerActive);
 
     return (
-        <nav className="navbar is-spaced" role="navigation" aria-label="main navigation">
+        <nav className={`navbar is-spaced header ${ scrollDirection === "down" ? "hide" : "show"} `} role="navigation" aria-label="main navigation">
             <div className="navbar-brand">
-                <a className="navbar-item" href="/">
+                <a className="navbar-item"
+                    onClick={() => handleSectionClick(SectionEnum.HOME)}
+                >
                     <img src={logo} alt="Logo" />
                 </a>
 
@@ -67,23 +66,26 @@ const Header = () => {
                         </span>
                         Quienes somos
                     </a>
-                    <a className="navbar-item navbar-item-button" href="/">
-                        <span className="icon ">
-                            <AiOutlineMail />
-                        </span>
-                        Contacto
-                    </a>
-                    <a className="navbar-item navbar-item-button" href="/">
+                    <a className="navbar-item navbar-item-button"
+                        onClick={() => handleSectionClick(SectionEnum.CAPABILITIES)}>
                         <span className="icon">
                             <MdEngineering />
                         </span>
                         Capacidades
                     </a>
-                    <a className="navbar-item navbar-item-button" href="/">
+                    <a className="navbar-item navbar-item-button"
+                        onClick={() => handleSectionClick(SectionEnum.EXPERIENCE)}>
                         <span className="icon">
                             <BsTools />
                         </span>
                         Experiencia
+                    </a>
+                    <a className="navbar-item navbar-item-button"
+                        onClick={() => handleSectionClick(SectionEnum.CONTACT)}>
+                        <span className="icon ">
+                            <AiOutlineMail />
+                        </span>
+                        Contacto
                     </a>
                 </div>
             </div>

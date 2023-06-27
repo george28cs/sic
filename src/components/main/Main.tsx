@@ -4,9 +4,12 @@ import { Link } from 'react-router-dom';
 
 import Home from './Home';
 import About from './About';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { SectionEnum } from '../../utils/enum/sectionEnum';
 import AppContext from '../../context/AppContext';
+import Capabilities from './Capabilities';
+import Experience from './Experience';
+import Contact from './Contact';
 
 export default function Main() {
   const [activeSection] = useContext(AppContext)
@@ -16,6 +19,10 @@ export default function Main() {
       <div className='main-content'>
         {activeSection === SectionEnum.HOME && <Home />}
         {activeSection === SectionEnum.ABOUT && <About />}
+        {activeSection === SectionEnum.CAPABILITIES && <Capabilities />}
+        {activeSection === SectionEnum.EXPERIENCE && <Experience />}
+        {activeSection === SectionEnum.CONTACT && <Contact />}
+
       </div>
     </div>
   );
