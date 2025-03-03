@@ -129,7 +129,7 @@ export default function Experience() {
       translateY: [50, 0],
       easing: 'easeOutExpo',
       duration: 800,
-      delay: anime.stagger(100),
+      delay: anime.stagger(900),
       autoplay: false,
     });
   }, []);
@@ -146,11 +146,13 @@ export default function Experience() {
           <div className='card' key={index}>
             <div className='card-image'>
               {project.images.length > 1 ? (
-                <Carousel autoPlay infiniteLoop showThumbs={false}>
+                 <div className='carousel-container'>
+                <Carousel preventMovementUntilSwipeScrollTolerance autoPlay infiniteLoop stopOnHover showThumbs={false} transitionTime = {3000} interval={9000}>
                   {project.images.map((image, idx) => (
                     <img key={idx} src={image} alt={`Slider ${idx + 1}`} />
                   ))}
                 </Carousel>
+                </div>
               ) : (
                 <img src={project.images[0]} alt='Image' />
               )}

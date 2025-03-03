@@ -1,18 +1,14 @@
+import React, { useEffect, useRef } from 'react';
+import { useInView } from 'react-intersection-observer';
+import { CSSTransition } from 'react-transition-group';
+import '../../styles/capabilities.css';
+
 import electricalImg from '../../assets/electrical.jpg';
 import mechanicalImg from '../../assets/electromec.jpg';
 import electrical from '../../assets/electrical.jpeg';
 import instruments from '../../assets/instruments.jpg';
 import controlVideo from '../../assets/Control.mp4';
 import instrumentsVideo from '../../assets/aboutVideo1.mp4';
-
-/*
-Capacidades: capacidades divirlo en 2 rubros: en proyectos y capital humano.
-*/
-
-import React, { useEffect, useRef } from 'react';
-import { useInView } from 'react-intersection-observer';
-import '../../styles/capabilities.css';
-import anime from 'animejs';
 
 export default function Capabilities() {
   const capabilitiesData = [
@@ -25,9 +21,7 @@ export default function Capabilities() {
   const renderCardImage = (capability) => {
     if (capability.type === 'video') {
       return (
-        <div
-          className='card-image'
-        >
+        <div className='card-image'>
           <video className='card-video' autoPlay muted loop>
             <source src={capability.video} type='video/mp4' />
           </video>
@@ -39,10 +33,7 @@ export default function Capabilities() {
       );
     } else {
       return (
-        <div
-          className='card-image'
-          style={{ backgroundImage: `url(${capability.image})` }}
-        >
+        <div className='card-image' style={{ backgroundImage: `url(${capability.image})` }}>
           <div className='image-overlay fade-in'>
             <h2 className='image-text'>{capability.title}</h2>
             <p className='image-subtitle'>{capability.subtitle}</p>
@@ -57,9 +48,11 @@ export default function Capabilities() {
       <h1>Capacidades</h1>
       <div className='capabilities-container'>
         {capabilitiesData.map((capability, index) => (
-          <div className='card' key={index}>
-            {renderCardImage(capability)}
-          </div>
+          <CSSTransition key={index} classNames='fade' timeout={500}>
+            <div className='card'>
+              {renderCardImage(capability)}
+            </div>
+          </CSSTransition>
         ))}
       </div>
     </section>

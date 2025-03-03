@@ -24,8 +24,10 @@
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.8.2",
     "react-slick": "^0.29.0",
+    "react-transition-group": "^4.4.5",
     "reactbulma": "^3.0.4",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "surge": "^0.23.1"
   },
   "devDependencies": {
     "@types/react": "^16.14.43",

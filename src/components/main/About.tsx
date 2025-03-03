@@ -4,6 +4,7 @@ import about1Img from '../../assets/about1.png';
 import about2Img from '../../assets/about2.png';
 import about3Img from '../../assets/about3.png';
 import aboutVideo1 from '../../assets/About2.mp4';
+import valoresImg from '../../assets/Mesa de trabajo 1@2x.png';
 
 export default function About() {
 
@@ -87,14 +88,9 @@ export default function About() {
         <h1 style={{ fontFamily: 'Poppins, sans-serif', paddingBottom: '2rem', fontSize: '2rem', fontWeight: 'bold' }}>
           Nuestros valores
         </h1>
-        <ul className='valores-items'>
-          <li>Responsabilidad</li>
-          <li>Honestidad</li>
-          <li>Objetividad</li>
-          <li>Adaptabilidad</li>
-          <li>Confianza</li>
-          <li>Pasión</li>
-        </ul>
+        <div className='valores-img-container'>
+          <img src={valoresImg} alt="" />
+          </div>
       </div>
     </section>
   );

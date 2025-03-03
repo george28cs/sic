@@ -3,8 +3,12 @@
     flex-wrap: wrap;
     font-family: 'Poppins', sans-serif;
 }
-.card {
-    margin-bottom: 0;
+
+.carousel-container {
+    overflow-y: scroll; /* Habilita el desplazamiento vertical */
+}
+#experience .card {
+    margin-bottom: 3rem;
     background-color: rgba(6, 9, 30, 0.913);
     color: white;
 }
@@ -12,6 +16,7 @@
 .card-image {
     height: initial;
     width: initial;
+    
 }
 
 #experience li img {
@@ -35,6 +40,7 @@
 .card-content ul {
     list-style: disc;
     padding-left: 20px;
+    font-size: 1.3rem;
 }
 
 .card-content ul li {

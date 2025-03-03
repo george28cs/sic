@@ -10,6 +10,9 @@ export default function Contact() {
   const [errors, setErrors] = useState(formErrors);
   const [token, setToken] = useState('');
   const [recaptchaRendered, setRecaptchaRendered] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [isError, setIsError] = useState(false);
 
   const _window = window as any;
 
@@ -49,7 +52,7 @@ export default function Contact() {
       _window.grecaptcha.ready(() => {
         try {
           _window.grecaptcha.render(reCaptchaRef.current, {
-            sitekey: '6LciTOUkAAAAAIB960VJXWhMSRvFtODS5StGKR9d',
+            sitekey: '6LcsiNsmAAAAAL4T2ZngQgXA_4i4wTrTFk6viROf',
             callback: onLoaded,
             theme: 'dark',
             size: 'compact',
@@ -65,7 +68,6 @@ export default function Contact() {
     }
   }, [recaptchaRendered]);
 
-
   const onLoaded = async (token: string) => {
     setToken(token);
     setErrors({});
@@ -80,59 +82,58 @@ export default function Contact() {
     _window.grecaptcha.reset();
   };
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
-    const errors = validate();
-    const { message, email, name, token } = errors || {};
-    if (!message && !email && !name && !token) clear();
+    validate();
+    setIsLoading(true);
+
+    try {
+      const bodyString = JSON.stringify({
+        name,
+        email,
+        message,
+        token,
+      });
+      console.log(bodyString)
+      const response = await fetch('https://us-central1-superb-tendril-391216.cloudfunctions.net/sendEmail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: bodyString,
+      });
+
+      if (response.ok) {
+        setIsSuccess(true);
+        clear();
+        // Aquí puedes mostrar el alert o realizar otras acciones
+        alert('El mensaje se envió correctamente');
+      } else {
+        setIsError(true);
+        // Aquí puedes mostrar el modal de error o realizar otras acciones
+        alert('Hubo un error al enviar el mensaje. Por favor, intenta nuevamente.');
+      }
+    } catch (error) {
+      setIsError(true);
+      // Aquí puedes mostrar el modal de error o realizar otras acciones
+      alert('Hubo un error al enviar el mensaje. Por favor, intenta nuevamente.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
-
   const mapRef = useRef(null);
-  const markerRef = useRef(null);
 
   useEffect(() => {
-    // Código para inicializar el mapa y manipularlo
     const map = new _window.google.maps.Map(mapRef.current, {
-      center: { lat: 18.14887, lng: -94.4414113 }, // Ejemplo de ubicación en San Francisco
-      zoom: 15,
+      center: { lat: 18.14887, lng: -94.4414113 }, 
+      zoom: 12,
       zoomControl: true, // Habilitar control de zoom
+      mapTypeControl: false, // Desactivar el control de tipo de mapa
     });
 
-    // Puedes agregar marcadores, polígonos, etc. aquí
-    // Agregar marcador
-    const marker = new _window.google.maps.Marker({
-      position: { lat: 18.14887, lng: -94.4414113 },
-      map: map,
-      title: 'SIS&C',
-      label: {
-        text: 'SIS&C', // Contenido del label
-        color: 'black', // Color del texto del label
-        fontSize: '14px', // Tamaño de fuente del label
-        fontWeight: 'bold', // Peso de fuente del label
-      },
-    });
-
-    const addressContent = '<strong>Cuauhtemoc 1707, Col. Puerto México, Coatzacoalcos, Veracruz.</strong>';
-
-    // Crear el InfoWindow
-    const infoWindow = new _window.google.maps.InfoWindow({
-      content: addressContent,
-    });
-  
-    // Abrir el InfoWindow al hacer clic en el marcador
-    marker.addListener('click', () => {
-      infoWindow.open(map, marker);
-    });
-  
-    // Guardar referencia al marcador
-    markerRef.current = marker;
-    return () => {
-      marker.setMap(null); // Eliminar el marcador del mapa
-
-      // Limpia los recursos del mapa al desmontar el componente si es necesario
-    };
   }, []);
+
   return (
     <section className='section' id='contact'>
       <h1>Contáctanos</h1>
@@ -195,11 +196,12 @@ export default function Contact() {
           <br />
           <div className="field is-grouped">
             <div className="control">
-              <button type="submit" className="button is-link">Contactar</button>
+              <button type="submit" className="button is-link" disabled={isLoading}>
+                {isLoading ? 'Enviando...' : 'Contactar'}
+              </button>
             </div>
           </div>
         </form>
-
       </article>
     </section>
   );
